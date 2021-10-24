@@ -1,3 +1,5 @@
+// this file contains the function to create the tic tac toe board!!
+
 function drawBoard(board) {
 
 }
