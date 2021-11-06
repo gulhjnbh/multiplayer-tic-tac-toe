@@ -1,5 +1,5 @@
-// this file contains the function to create the tic tac toe board!!
-
+// Board format is a string of 9 characters of x, o, or (space) 
+// The first three charcaters represent 1st row etc,  e.g., "oxoxxxooo"
 function drawBoard(board) {
 
 }
@@ -8,27 +8,7 @@ function getBoard() {
 
 }
 
-function getSumAndAvg() {
-    var sum = 0;
-    var n = 3;
-    //var x = [5,8,10,3,6];
-
-    //for(var i=0; i<n; i++){
-    //sum = sum+x[i]
-    //}
-    //alert('sum='+sum)
-    //alert('avg='+sum/n)
-    var firstNum = document.getElementById("1st");
-    var secondNum = document.getElementById("2nd");
-    var thirdNum = document.getElementById("3rd");
-    sum = firstNum+secondNum+thirdNum;
-    avg=sum/3;
-    var sumDiv = document.getElementById("sum");
-    var avgDiv = document.getElementById("avg");
-    sumDiv.innerText=sum;
-    avgDiv.innerText=avg;
-}
-
+// this file contains the functions to create the tic tac toe board!!
 var sequenceNumber = 0
 var matrix = [];
 for(var i=0; i<3; i++) {
@@ -130,6 +110,8 @@ function showRightColumWinner(player) {
         tttResult.innerText = player + " has won";
     }
 }
+
+/*
 function calculate(operator) {
 // document.getElementById('demo').innerHTML =s Date();
 
@@ -184,3 +166,26 @@ function getNext(){
     }
     document.getElementById("output").innerText = output;
 }
+
+function getSumAndAvg() {
+    var sum = 0;
+    var n = 3;
+    //var x = [5,8,10,3,6];
+
+    //for(var i=0; i<n; i++){
+    //sum = sum+x[i]
+    //}
+    //alert('sum='+sum)
+    //alert('avg='+sum/n)
+    var firstNum = document.getElementById("1st");
+    var secondNum = document.getElementById("2nd");
+    var thirdNum = document.getElementById("3rd");
+    sum = firstNum+secondNum+thirdNum;
+    avg=sum/3;
+    var sumDiv = document.getElementById("sum");
+    var avgDiv = document.getElementById("avg");
+    sumDiv.innerText=sum;
+    avgDiv.innerText=avg;
+}
+
+*/
