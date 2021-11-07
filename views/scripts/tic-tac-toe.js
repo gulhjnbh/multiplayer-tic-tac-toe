@@ -1,11 +1,85 @@
 // Board format is a string of 9 characters of x, o, or (space) 
 // The first three charcaters represent 1st row etc,  e.g., "oxoxxxooo"
 function drawBoard(board) {
+    var topLeft = board.charAt(0);
+    var topLeftDiv = document.getElementById("topLeft");
+    topLeftDiv.innerText = topLeft;
+
+    var topCenter = board.charAt(1);
+    var topCenterDiv = document.getElementById("topCenter");
+    topCenterDiv.innerText = topCenter;
+
+    var topRight = board.charAt(2);
+    var topRightDiv = document.getElementById("topRight");
+    topRightDiv.innerText = topRight;
+
+    var middleLeft = board.charAt(3);
+    var middleLeftDiv = document.getElementById("middleLeft");
+    middleLeftDiv.innerText = middleLeft;
+
+    var middleCenter = board.charAt(4);
+    var middleCenterDiv = document.getElementById("middleCenter");
+    middleCenterDiv.innerText = middleCenter;
+
+    var middleRight = board.charAt(5);
+    var middleRightDiv = document.getElementById("middleRight");
+    middleRightDiv.innerText = middleRight;
+
+    var bottomLeft = board.charAt(6);
+    var bottomLeftDiv = document.getElementById("bottomLeft");
+    bottomLeftDiv.innerText = bottomLeft;
+
+    var bottomCenter = board.charAt(7);
+    var bottomCenterDiv = document.getElementById("bottomCenter");
+    bottomCenterDiv.innerText = bottomCenter;
+
+    var bottomRight = board.charAt(8);
+    var bottomRightDiv = document.getElementById("bottomRight");
+    bottomRightDiv.innerText = bottomRight;
 
 }
 
 function getBoard() {
+    var topLeftDiv = document.getElementById("topLeft");
+    var topLeft = topLeftDiv.innerText;
+    if (topLeft=='') topLeft=' ';
 
+    var topCenterDiv = document.getElementById("topCenter");
+    var topCenter = topCenterDiv.innerText;
+    if (topCenter=='') topCenter=' ';
+
+    var topRightDiv = document.getElementById("topRight");
+    var topRight = topRightDiv.innerText;
+    if (topRight=='') topRight=' ';
+
+    var middleLeftDiv = document.getElementById("middleLeft");
+    var middleLeft = middleLeftDiv.innerText;
+    if (middleLeft=='') middleLeft=' ';
+
+    var middleCenterDiv = document.getElementById("middleCenter");
+    var middleCenter = middleCenterDiv.innerText;
+    if (middleCenter=='') middleCenter=' ';
+
+
+    var middleRightDiv = document.getElementById("middleRight");
+    var middleRight = middleRightDiv.innerText;
+    if (middleRight=='') middleRight=' ';
+
+    var bottomLeftDiv = document.getElementById("bottomLeft");
+    var bottomLeft = bottomLeftDiv.innerText;
+    if (bottomLeft=='') bottomLeft=' ';
+
+    var bottomCenterDiv = document.getElementById("bottomCenter");
+    var bottomCenter = bottomCenterDiv.innerText;
+    if (bottomCenter=='') bottomCenter=' ';
+
+    var bottomRightDiv = document.getElementById("bottomRight");
+    var bottomRight = bottomRightDiv.innerText;
+    if (bottomRight=='') bottomRight=' ';
+
+
+    var board = topLeft+topCenter+topRight+middleLeft+middleCenter+middleRight+bottomLeft+bottomCenter+bottomRight;
+    return board;
 }
 
 // this file contains the functions to create the tic tac toe board!!
@@ -15,7 +89,6 @@ for(var i=0; i<3; i++) {
     matrix[i] = new Array(3);
 }
 function showXorO(id){
-    sendBoard();
     var div = document.getElementById(id);
     sequenceNumber = sequenceNumber + 1
     if (div.innerText == "X" || div.innerText == "O") {
@@ -60,6 +133,8 @@ function showXorO(id){
     showMiddleColumnWinner("O");
     showRightColumWinner("X");
     showRightColumWinner("O");
+
+    sendBoard();
 }        
 
 function showTopRowWinner(player) {
