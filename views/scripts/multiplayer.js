@@ -15,8 +15,8 @@ const sendMessage = () => {
 socket.on('board',  (board) => {
     drawBoard(board);
 });
-const sendBoard = () => {
-    const board = getBoard();
+const sendBoard = (player) => {
+    const board = getBoard(player);
     socket.emit('board', board );
 }
 

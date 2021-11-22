@@ -1,6 +1,6 @@
 // Board format is a string of 9 characters of x, o, or (space) 
 // The first three charcaters represent 1st row etc,  e.g., "xoxxxooo:x"
-var player;
+
 function drawBoard(board) {
     var topLeft = board.charAt(0);
     var topLeftDiv = document.getElementById("topLeft");
@@ -38,12 +38,12 @@ function drawBoard(board) {
     var bottomRightDiv = document.getElementById("bottomRight");
     bottomRightDiv.innerText = bottomRight;
 
-    player = board.charAt(10);    
-    if (player == 'x' || player == 'u') {
-        player = 'o';
+    globalThis.player = board.charAt(10);    
+    if (globalThis.player.toUpperCase() == 'X' || globalThis.player.toUpperCase() == 'U') {
+        globalThis.player = 'O';
     }
     else {
-        player = 'x';
+        globalThis.player = 'X';
     }
 }
 
@@ -115,7 +115,7 @@ function showXorO(id){
     else{
         div.innerText = "O";  
     }
-    if (player) div.innerText = player.toUpperCase();
+    if (globalThis.player) div.innerText = globalThis.player.toUpperCase();
 
     if(id=="topLeft") matrix[0][0]=div.innerText;
     if(id=="topCenter") matrix[0][1]=div.innerText;
@@ -144,8 +144,7 @@ function showXorO(id){
     showRightColumWinner("X");
     showRightColumWinner("O");
 
-    var player = div.innerText;
-    sendBoard(player);
+    sendBoard(globalThis.player);
     sequenceNumber = sequenceNumber + 1
 }        
 
