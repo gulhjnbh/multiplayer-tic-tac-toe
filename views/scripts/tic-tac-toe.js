@@ -45,6 +45,9 @@ function drawBoard(board) {
     else {
         globalThis.player = 'X';
     }
+
+    document.getElementById('topLeft').style.pointerEvents = 'auto'; 
+    //TODO: Do this for all other squares.
 }
 
 function getBoard(player) {
@@ -85,7 +88,8 @@ function getBoard(player) {
     var bottomRight = bottomRightDiv.innerText;
     if (bottomRight=='') bottomRight=' ';
 
-
+    document.getElementById('topLeft').style.pointerEvents = 'none'
+    //TODO: do the same for all the other squares
     var board = topLeft+topCenter+topRight+middleLeft+middleCenter+middleRight+bottomLeft+bottomCenter+bottomRight;
     return board+":"+player;
 }
@@ -116,6 +120,7 @@ function showXorO(id){
         div.innerText = "O";  
     }
     if (globalThis.player) div.innerText = globalThis.player.toUpperCase();
+    else globalThis.player = div.innerText;
 
     if(id=="topLeft") matrix[0][0]=div.innerText;
     if(id=="topCenter") matrix[0][1]=div.innerText;
