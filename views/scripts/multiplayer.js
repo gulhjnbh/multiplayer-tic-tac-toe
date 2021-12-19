@@ -14,10 +14,22 @@ const sendMessage = () => {
 //code for multiplayer tic tac toe
 socket.on('board',  (board) => {
     drawBoard(board);
+    //enables the board(boardEnabled)
+    enableBoard();
 });
 const sendBoard = (player) => {
+    //disables the board!
+    disableBoard();
     const board = getBoard(player);
     socket.emit('board', board );
 }
 
+function enableBoard(){
+
+}
+
+function disableBoard(){
+    // document.getElementById("topLeft").disabled = true;
+    // document.getElementById("topLeft").onclick=''
+}
 
