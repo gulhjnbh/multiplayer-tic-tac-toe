@@ -24,11 +24,13 @@ const sendBoard = (player) => {
     socket.emit('board', board );
 }
 
+var boardEnabled = true;
 function enableBoard(){
-
+    boardEnabled = true;
 }
 
 function disableBoard(){
+    boardEnabled = false;
     // document.getElementById("topLeft").disabled = true;
     // document.getElementById("topLeft").onclick=''
 }

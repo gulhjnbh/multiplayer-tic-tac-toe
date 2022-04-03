@@ -101,6 +101,8 @@ for(var i=0; i<3; i++) {
     matrix[i] = new Array(3);
 }
 function showXorO(id){
+    if (!boardEnabled) return;
+
     var div = document.getElementById(id);
 
     if (div.innerText == "X" || div.innerText == "O") {
